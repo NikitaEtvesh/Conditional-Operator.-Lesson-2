@@ -36,58 +36,43 @@ public class Main {
 
         // Задача 4
         System.out.println("\nЗадача 4");
-        int deliveryDistance = 50;
-        int deliveryDays = calculateDeliveryDays(deliveryDistance);
-        System.out.println("Потребуется дней: " + deliveryDays);
+        int deliveryDistance = 101;
+        if (deliveryDistance <= 20) {
+            System.out.println("Доставка занимает 1 день");
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Доставка занимает 2 дня");
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Доставка занимает 3 дня");
+        } else {
+            System.out.println("Доставки нет");
+        }
 
         // Задача 5
         System.out.println("\nЗадача 5");
-        int monthNumber = 12;
-        String season = getSeason(monthNumber);
-        System.out.println("Сезон: " + season);
-    }
-
-    public static int calculateDeliveryDays(int distance) {
-        if (distance <= 20) {
-            return 1;
-        } else if (distance <= 60) {
-            return 2;
-        } else if (distance <= 100) {
-            return 3;
-        } else {
-            return 0;
-        }
-    }
-
-    public static String getSeason(int monthNumber) {
-        String season;
-
+        int monthNumber = 13;
         switch (monthNumber) {
             case 12:
             case 1:
             case 2:
-                season = "Зима";
+                System.out.println("Зима");
                 break;
             case 3:
             case 4:
             case 5:
-                season = "Весна";
+                System.out.println("Весна");
                 break;
             case 6:
             case 7:
             case 8:
-                season = "Лето";
+                System.out.println("Лето");
                 break;
             case 9:
             case 10:
             case 11:
-                season = "Осень";
+                System.out.println("Осень");
                 break;
             default:
-                season = "Неверный номер месяца";
-                break;
+                System.out.println("Неверный номер месяца");
         }
-
-        return season;
     }
 }
